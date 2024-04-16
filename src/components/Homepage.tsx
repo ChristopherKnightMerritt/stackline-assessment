@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux"
 import { useAppDispatch, RootState, AppDispatch } from "../redux/index";
 import { loadProduct } from '../redux/ProductReducer';
+import Header from "./Header";
+import Description from "./Description";
+import Graph from "./Graph";
+import Datatable from "./Datatable";
+
 
 const Homepage = () => {
 
@@ -13,8 +18,12 @@ const Homepage = () => {
 
     const productData = useSelector((state: RootState) => state.product);
     console.log('productData: ', productData)
-    return (
-        <div>hello 2</div>
+    return (<>
+        <Header />
+        <Description />
+        <Graph />
+        <Datatable />
+    </>
     )
 }
 

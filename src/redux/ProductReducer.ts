@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import productJson from '../stackline_frontend_assessment_data_2021.json';
 
 export interface ProductStateInterface  {
     product: object;
@@ -13,7 +14,7 @@ export const productSlice = createSlice({
     initialState,
     reducers: {
         loadProduct: (state) => {
-            state.product = {"name": "data goes here"};
+            state.product = productJson;
         }
     }
 })
