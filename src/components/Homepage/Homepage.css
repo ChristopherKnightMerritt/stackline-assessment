@@ -1,0 +1,11 @@
+.body-container{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 1rem;
+}
+
+.vertical-column {
+    display: flex;
+    flex-direction: column;
+}
