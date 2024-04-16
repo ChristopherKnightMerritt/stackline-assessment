@@ -12,8 +12,8 @@ export const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
-        loadProduct: (state, data) => {
-            state.product = data;
+        loadProduct: (state) => {
+            state.product = {"name": "data goes here"};
         }
     }
 })
