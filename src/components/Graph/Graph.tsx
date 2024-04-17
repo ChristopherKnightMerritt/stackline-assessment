@@ -24,17 +24,18 @@ interface salesData {
 const Graph: React.FC<Props> = ({salesData}) => {
     
     const formatDate = (rawDate: string) => {
-        return new Date(rawDate).toLocaleString("default", { month: "short" });
+        console.log('rawDate: ', rawDate)
+        return new Date(rawDate).toLocaleString("en-us", { month: "short", timeZone: 'UTC' });
     }     
 
     return (        
         <div className='graph-container'>
             <h1 className="text-heading">Retail Sales</h1>
             <ResponsiveContainer width="100%" aspect={5}>
-                <LineChart data={salesData} margin={{ right: 10, left: 10 }}>
+                <LineChart data={salesData} margin={{ right: 10, left: 10 }} {...{overflow: 'visible'}}>
                     
-                    <XAxis dataKey="weekEnding" interval={5} tickLine={false} tickFormatter={(rawDate) => formatDate(rawDate)} />
-                    <YAxis hide={true} padding={{ top: 50, bottom: 50}}></YAxis>
+                    <XAxis stroke="#B3B8C5" dataKey="weekEnding" interval={4} tickLine={false} tickFormatter={(rawDate) => formatDate(rawDate)} />
+                    <YAxis hide={true} padding={{ top: 20, bottom: 20}}></YAxis>
                     
                     <Tooltip />
                     <Line
@@ -44,6 +45,7 @@ const Graph: React.FC<Props> = ({salesData}) => {
                         dot={false}
                         activeDot={false}
                         strokeWidth = {2}
+                        isAnimationActive={false}
                     />
                     <Line 
                         type='monotone'
@@ -52,6 +54,7 @@ const Graph: React.FC<Props> = ({salesData}) => {
                         dot={false} 
                         activeDot={false}
                         strokeWidth = {2}
+                        isAnimationActive={false}
                     />
                 </LineChart>
             </ResponsiveContainer>
