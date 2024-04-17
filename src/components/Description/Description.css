@@ -1,5 +1,4 @@
 .description-container{
-    /* border: 1px solid black; */
     max-width: 25%;
     background-color: #ffffff;
     box-shadow: 5px 5px 5px #ECEFF4;
@@ -17,7 +16,6 @@
 }
 
 .product-name {
-    /* padding-top: 0; */
     margin: 0.5rem;
 }
 .product-info-container p {

@@ -8,9 +8,6 @@ import Datatable from "../Datatable/Datatable";
 import './Homepage.css'
 import { updateDatatable } from '../../redux/DatatableReducer';
 
-
-
-// export these interfaces?
 interface productDetail {
     brand: string,
     details: Array<string>,

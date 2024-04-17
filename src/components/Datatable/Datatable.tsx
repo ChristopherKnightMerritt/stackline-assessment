@@ -46,27 +46,27 @@ const Datatable: React.FC<Props> = ({salesData}) => {
                     <tr>
                         <th>
                             <button type="button" onClick={()=> sortCol("weekEnding", !sorting.ascending)}>
-                                Week ending &#x2303;
+                                WEEK ENDING <div className='downIcon'>&#x2304;</div>
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("retailSales", !sorting.ascending)}>
-                                Retail sales &#x2303;
+                                RETAIL SALES <div className='downIcon'>&#x2304;</div>
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("wholesaleSales", !sorting.ascending)}>
-                                Wholesale Sales &#x2303;
+                                WHOLESALE SALES <div className='downIcon'>&#x2304;</div>
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("unitsSold", !sorting.ascending)}>
-                                Units Sold &#x2303;
+                                UNITS SOLD <div className='downIcon'>&#x2304;</div>
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("retailerMargin", !sorting.ascending)}>
-                                Retailer Margin &#x2303;
+                                RETAILER MARGIN <div className='downIcon'>&#x2304;</div>
                             </button>
                         </th>
                     </tr>

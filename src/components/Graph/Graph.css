@@ -1,11 +1,8 @@
 .graph-container{
-    /* border: 1px solid black; */
     height: 100%;
-    /* width: 100%; */
     background-color: #ffffff;
     box-shadow: 5px 5px 5px #ECEFF4;
     padding: 1rem 1rem 1rem 1rem;
-    /* margin: 1rem; */
 }
 
 .graph-container .text-heading  {

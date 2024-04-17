@@ -1,21 +1,14 @@
 .datatable-container{
     margin-top: 2rem;
-    /* border: 1px solid black; */
     background-color: #ffffff;
     box-shadow: 5px 5px 5px #ECEFF4;
-    /* padding: 0.5rem; */
 }
 table {
-    /* border-bottom: 1px solid #ECEFF4; */
-    /* border: 1px solid black; */
-    /* width: 100%; */
     text-align: center;
     border-collapse: collapse;
-    /* border-spacing: 1rem; */
     display: block;
 }
 thead {
-    /* border-spacing: 2rem; */
     border-bottom: 1px solid #ECEFF4;
     width: 100%;
 }
@@ -25,12 +18,10 @@ th {
     text-align: center;
 }
 tr {
-    /* border-spacing: 2rem; */
     border-bottom: 1px solid #ECEFF4;
     width: 100%;
 }
 td {
-    /* border: 1px solid black; */
     padding: 1rem 2rem;
     font-size: 14px;
     width: 100%;
@@ -44,12 +35,17 @@ tbody{
     all: unset;   
     display: flex;
     flex-direction: row;
-    font-weight: 200;
-    font-size: 14px;
-
+    font-weight: 400;
+    font-size: 13px;
+    color: #858D98;
     text-align: right;
     margin: auto;
 }
 .datatable-container button:hover {
     cursor: pointer;   
+}
+.downIcon {
+    line-height: 0.7;
+    padding-left: 0.5rem;
+    color: #B3B8C5;
 }

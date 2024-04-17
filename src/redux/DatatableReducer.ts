@@ -22,7 +22,7 @@ export const datatableSlice = createSlice({
     reducers: {
         updateDatatable: (state, newState) => {
             state.tableData = newState.payload;
-        }
+        },
     }
 })
 
