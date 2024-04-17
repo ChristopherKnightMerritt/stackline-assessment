@@ -11,7 +11,7 @@ interface productDetail {
     retailer: string,
     tags: Array<string>,
     title: string,
-    subtitle: string
+    subtitle: string,
 }
 
 const Description: React.FC<Props> = ({productDetails}) => {

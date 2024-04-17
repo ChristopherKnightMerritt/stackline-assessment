@@ -15,7 +15,19 @@ interface productDetail {
     retailer: string,
     tags: Array<string>,
     title: string,
-    subtitle: string
+    subtitle: string,
+}
+
+interface salesObject {
+    sales: Array<salesData>
+}
+
+interface salesData {
+    weekEnding: string
+    retailSales: number,
+    wholesaleSales: number,
+    unitsSold: number,
+    retailerMargin: number
 }
 
 const Homepage = () => {
@@ -27,12 +39,15 @@ const Homepage = () => {
     const productData = allProductData['product']
     const productDetail = productData as productDetail[]
 
+    const salesObject = productData as salesObject[]
+    const salesData = salesObject[0].sales
+
     return (<>
         <Header />
         <div className="body-container">
             <Description productDetails= {productDetail}/>
             <div className="vertical-column">
-                <Graph />
+                <Graph salesData={salesData}/>
                 <Datatable />
             </div>
         </div>
