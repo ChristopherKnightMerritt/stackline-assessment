@@ -1,6 +1,6 @@
 import './Datatable.css'
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useAppDispatch, RootState, AppDispatch } from "../../redux/index";
 import { updateDatatable } from '../../redux/DatatableReducer';
 import { useSelector } from 'react-redux';
@@ -17,17 +17,6 @@ interface salesData {
     unitsSold: number,
     retailerMargin: number,
 }
-
-interface sortArray{
-    field: string;
-    ascending: boolean;
-}
-
-interface sortedData {
-    column: string
-}
-
-type a = keyof salesData;
 
 const Datatable: React.FC<Props> = ({salesData}) => {
 
@@ -47,37 +36,37 @@ const Datatable: React.FC<Props> = ({salesData}) => {
             sortedData.sort((a: any, b: any) => a[column] > b[column] ? -1 : a[column] < b[column] ? 1 : 0)
         }
         dispatch(updateDatatable(sortedData))
+        
     }
 
     return (
-        <div className='datatable-container'>Datatable
+        <div className='datatable-container'>
             <table>
                 <thead>
                     <tr>
-
                         <th>
                             <button type="button" onClick={()=> sortCol("weekEnding", !sorting.ascending)}>
-                                Week ending
+                                Week ending &#x2303;
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("retailSales", !sorting.ascending)}>
-                                Retail sales
+                                Retail sales &#x2303;
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("wholesaleSales", !sorting.ascending)}>
-                                Wholesale Sales
+                                Wholesale Sales &#x2303;
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("unitsSold", !sorting.ascending)}>
-                                Units Sold
+                                Units Sold &#x2303;
                             </button>
                         </th>
                         <th>
                             <button type="button" onClick={()=> sortCol("retailerMargin", !sorting.ascending)}>
-                                Retailer Margin
+                                Retailer Margin &#x2303;
                             </button>
                         </th>
                     </tr>
@@ -88,10 +77,10 @@ const Datatable: React.FC<Props> = ({salesData}) => {
                         return(
                             <tr key={i}>
                                 <td>{row.weekEnding}</td>
-                                <td>{row.retailSales}</td>
-                                <td>{row.wholesaleSales}</td>
+                                <td>${row.retailSales}</td>
+                                <td>${row.wholesaleSales}</td>
                                 <td>{row.unitsSold}</td>
-                                <td>{row.retailerMargin}</td>
+                                <td>${row.retailerMargin}</td>
                             </tr>
                         )
                     })
