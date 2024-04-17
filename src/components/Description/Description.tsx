@@ -1,4 +1,5 @@
 import './Description.css'
+// import { productDetail } from '../Homepage/Homepage'
 
 interface Props {
     productDetails: Array<productDetail>,

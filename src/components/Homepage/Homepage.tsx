@@ -6,7 +6,11 @@ import Description from "../Description/Description";
 import Graph from "../Graph/Graph";
 import Datatable from "../Datatable/Datatable";
 import './Homepage.css'
+import { updateDatatable } from '../../redux/DatatableReducer';
 
+
+
+// export these interfaces?
 interface productDetail {
     brand: string,
     details: Array<string>,
@@ -41,6 +45,7 @@ const Homepage = () => {
 
     const salesObject = productData as salesObject[]
     const salesData = salesObject[0].sales
+    dispatch(updateDatatable(salesData))
 
     return (<>
         <Header />
@@ -48,7 +53,7 @@ const Homepage = () => {
             <Description productDetails= {productDetail}/>
             <div className="vertical-column">
                 <Graph salesData={salesData}/>
-                <Datatable />
+                <Datatable salesData={salesData}/>
             </div>
         </div>
     </>
